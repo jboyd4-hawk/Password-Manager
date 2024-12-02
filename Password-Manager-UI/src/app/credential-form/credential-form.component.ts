@@ -10,12 +10,12 @@ import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-credential-form',
-  templateUrl: './credential-form.component.html', // Adjust the path if necessary
+  templateUrl: './credential-form.component.html',
   styleUrls: ['./credential-form.component.css'],
   imports: [
     CommonModule,
     ReactiveFormsModule
-  ]// Adjust the path if necessary
+  ]
 })
 export class CredentialFormComponent implements OnInit {
   credential: Credential = { id: 0, name: '', password: '' };

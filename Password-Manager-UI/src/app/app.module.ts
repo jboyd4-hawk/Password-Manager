@@ -6,8 +6,11 @@ import { AppComponent } from './app.component';
 import { CredentialsComponent } from './credentials/credentials.component';
 import { CredentialItemComponent } from './credential-item/credential-item.component';
 import { CredentialFormComponent} from './credential-form/credential-form.component';
-import { provideHttpClient} from '@angular/common/http';
+import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import {tokenInterceptor} from './token.interceptor';
 
 
 
@@ -21,9 +24,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    CredentialFormComponent
+    CredentialFormComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
-  providers: [provideHttpClient()],
+  providers: [provideHttpClient(withInterceptors([tokenInterceptor]))],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

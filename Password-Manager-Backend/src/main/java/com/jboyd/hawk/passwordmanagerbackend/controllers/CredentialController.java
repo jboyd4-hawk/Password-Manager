@@ -13,9 +13,9 @@ import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/credentials")
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class CredentialController {
 
     @Autowired
